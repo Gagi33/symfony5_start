@@ -2,7 +2,7 @@
 
 namespace App\User;
 
-use App\Entity\User;
+use App\User\User;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
