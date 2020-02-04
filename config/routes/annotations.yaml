@@ -1,3 +1,7 @@
 App\User:
     resource: ../../src/User/
     type: annotation
+
+App\Controller:
+    resource: ../../src/Controller/
+    type: annotation
