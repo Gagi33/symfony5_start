@@ -30,6 +30,7 @@
                 ->setDescription("Creates a new user.")
                 ->setHelp('This command allow you to create a user...')
                 ->addArgument('username', InputArgument::REQUIRED, 'The username of the user')
+                ->addArgument('email', InputArgument::REQUIRED, 'The email of the user')
                 ->addArgument('password', InputArgument::REQUIRED, 'User password');
         }
 
@@ -44,10 +45,9 @@
             );
 
             $user = (new User())
-            ->setEmail('test@test.com')
-            ->setPassword('1234')
-            ->setUsername('test')
-            ->setRoles(['ROLE_SUPER_ADMIN', 'ROLE_USER']);
+            ->setEmail($input->getArgument('email'))
+            ->setUsername($input->getArgument('username'))
+            ->setRoles(['ROLE_ADMIN']);
 
             $password = $this->passwordEncoder->encodePassword($user, $input->getArgument('password'));
 
